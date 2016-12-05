@@ -6,7 +6,9 @@
 
 import React, {Component} from 'react'
 import {Provider, connect} from 'react-redux'
-import {createStore, combineReducers} from 'redux'
+import {createStore, combineReducers, applyMiddleware} from 'redux'
+import {createAction} from 'redux-actions'
+import promiseMiddleware from 'redux-promise'
 import {
   AppRegistry,
   StyleSheet,
@@ -20,9 +22,10 @@ const textArea = (state = { textValue: '' }, action) => {
     case 'EDIT_TEXT':
       return {
         ...state,
-        textValue: action.text,
+        textValue: action.payload
       }
     case 'SUBMIT_TEXT':
+      console.log(action.payload)
       return {
         ...state,
         textValue: '',
@@ -33,17 +36,13 @@ const textArea = (state = { textValue: '' }, action) => {
 }
 
 const store = createStore(combineReducers({
-  textArea
-}), { textArea: { textValue: 'initial' } })
+    textArea
+  }), { textArea: { textValue: 'initial' } },
+  applyMiddleware(promiseMiddleware))
 
-const editText = (text) => ({
-  type: 'EDIT_TEXT',
-  text,
-})
-
-const submitText = (text) => ({
-  type: 'SUBMIT_TEXT',
-  text,
+const editText = createAction('EDIT_TEXT')
+const submitText = createAction('SUBMIT_TEXT', async text => {
+  return await fetch('http://192.168.0.11:3080/ping')
 })
 
 const mapStateToProps = (state) => {
