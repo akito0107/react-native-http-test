@@ -15,17 +15,17 @@ import {
   TextInput,
 } from 'react-native'
 
-const textArea = (state = {}, action) => {
+const textArea = (state = { textValue: '' }, action) => {
   switch (action.type) {
     case 'EDIT_TEXT':
       return {
         ...state,
-        text: action.text,
+        textValue: action.text,
       }
     case 'SUBMIT_TEXT':
       return {
         ...state,
-        text: '',
+        textValue: '',
       }
     default:
       return state
@@ -34,7 +34,7 @@ const textArea = (state = {}, action) => {
 
 const store = createStore(combineReducers({
   textArea
-}))
+}), { textArea: { textValue: 'initial' } })
 
 const editText = (text) => ({
   type: 'EDIT_TEXT',
@@ -48,14 +48,14 @@ const submitText = (text) => ({
 
 const mapStateToProps = (state) => {
   return {
-    inputValue: state.textArea.text,
+    inputValue: state.textArea.textValue,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onChangeTextInput: (text) => {
-      dispatch(editText(Text))
+      dispatch(editText(text))
     },
     onSubmitTextInput: (text) => {
       dispatch(submitText(text))
@@ -67,12 +67,13 @@ const TextEdit = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(({ inputValue, onChangeTextInput, onSubmitTextInput }) => {
+  console.log(inputValue)
   return (
     <TextInput
       style={{height: 40}}
       placeholder="input something"
-      onChangeText={(text) => onChangeTextInput(text)}
-      onSubmitEditing={(text) => onSubmitTextInput(text)}
+      onChangeText={onChangeTextInput}
+      onSubmitEditing={onSubmitTextInput}
       value={inputValue}
     />
   )
