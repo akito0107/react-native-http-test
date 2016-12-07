@@ -4,16 +4,63 @@
 
 import {Accelerometer} from 'react-native-motion-manager'
 import {DeviceEventEmitter} from 'react-native'
-import {createAction} from 'redux-actions'
+const util = require('util')
 
-Accelerometer.setAccelerometerUpdateInterval(0.75) // in seconds
-Accelerometer.startAccelerometerUpdates()
-DeviceEventEmitter.addListener('AccelerationData', (data) => {
-  console.log(data)
-})
+export function start() {
+  return {
+    type: 'MOTIONSENSOR',
+    payload: {
+      operation: 'start'
+    }
+  }
+}
 
-const updateSensor = createAction('UPDATE_SENSOR')
+export function listen({listenerActions}) {
+  return {
+    type: 'MOTIONSENSOR',
+    payload: {
+      operation: 'listen',
+      listenerActions
+    }
+  }
+}
 
-export default store => next => action => {
-  return next(action)
+export function stop() {
+  return {
+    type: 'MOTIONSENSOR',
+    payload: {
+      operation: 'stop'
+    }
+  }
+}
+
+export default function sensorMiddleware({ interval = 0.1 }) {
+  Accelerometer.setAccelerometerUpdateInterval(interval)
+  
+  return ({ dispatch }) => (next) => (action) => {
+    if (action.type !== 'MOTIONSENSOR') {
+      return next(action)
+    }
+    
+    switch (action.payload.operation) {
+      case 'start':
+        console.log('called start')
+        Accelerometer.startAccelerometerUpdates()
+        break
+      case 'listen':
+        console.log('called listen')
+        DeviceEventEmitter.addListener('AccelerationData', (data) => {
+          console.log(`called update: ${util.inspect(data)}`)
+          action.payload.listenerActions.forEach((listener) => {
+            dispatch(listener(data))
+          })
+        })
+        break
+      case 'stop':
+        Accelerometer.stopAccelerometerUpdates()
+        break;
+      default:
+        return next(action)
+    }
+  }
 }
