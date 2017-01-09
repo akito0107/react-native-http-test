@@ -2,7 +2,7 @@
  * @flow
  */
 
-import {Accelerometer} from 'react-native-motion-manager'
+import {Accelerometer, Gyroscope, Magnetometer} from 'react-native-motion-manager'
 import {DeviceEventEmitter} from 'react-native'
 const util = require('util')
 
@@ -15,7 +15,7 @@ export function start() {
   }
 }
 
-export function listen({listenerActions}) {
+export function listen({ listenerActions }) {
   return {
     type: 'MOTIONSENSOR',
     payload: {
@@ -36,6 +36,8 @@ export function stop() {
 
 export default function sensorMiddleware({ interval = 0.1 }) {
   Accelerometer.setAccelerometerUpdateInterval(interval)
+  Gyroscope.setGyroUpdateInterval(interval)
+  Magnetometer.setMagnetometerUpdateInterval(interval)
   
   return ({ dispatch }) => (next) => (action) => {
     if (action.type !== 'MOTIONSENSOR') {
@@ -46,11 +48,21 @@ export default function sensorMiddleware({ interval = 0.1 }) {
       case 'start':
         console.log('called start')
         Accelerometer.startAccelerometerUpdates()
+        Gyroscope.startGyroUpdates()
+        Magnetometer.startMagnetometerUpdates()
         break
       case 'listen':
-        console.log('called listen')
         DeviceEventEmitter.addListener('AccelerationData', (data) => {
-          console.log(`called update: ${util.inspect(data)}`)
+          action.payload.listenerActions.forEach((listener) => {
+            dispatch(listener(data))
+          })
+        })
+        DeviceEventEmitter.addListener('GyroData', (data) => {
+          action.payload.listenerActions.forEach((listener) => {
+            dispatch(listener(data))
+          })
+        })
+        DeviceEventEmitter.addListener('MagnetometerData', (data) => {
           action.payload.listenerActions.forEach((listener) => {
             dispatch(listener(data))
           })
@@ -58,6 +70,8 @@ export default function sensorMiddleware({ interval = 0.1 }) {
         break
       case 'stop':
         Accelerometer.stopAccelerometerUpdates()
+        Gyroscope.stopGyroUpdates()
+        Magnetometer.stopMagnetometerUpdates()
         break;
       default:
         return next(action)

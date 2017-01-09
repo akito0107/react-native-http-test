@@ -3,7 +3,6 @@
 const WebSocketServer = require('ws').Server
 const wss = new WebSocketServer({port: 3000})
 const Transform = require('stream').Transform;
-const Writable = require('stream').Writable;
 const net = require('net');
 
 const stream = new Transform({
@@ -14,9 +13,8 @@ const stream = new Transform({
     } catch (e){
       return cb(null);
     }
-    let {x, y, z} = data.message.acceleration;
-    this.push(JSON.stringify({x, y, z}));
-    cb(null)
+    this.push(JSON.stringify(data.message))
+    cb()
   }
 });
 
@@ -37,9 +35,9 @@ const server = net.createServer((socket) => {
   console.log(`Bin Server Started`)
 });
 
-stream.pipe(new Writable({
-  write: function(chunk, enc, cb) {
-    console.log(`Writable Got: ${chunk}`)
-    cb(null);
-  }
-}));
+//stream.pipe(new Writable({
+//  write: function(chunk, enc, cb) {
+//    console.log(`Writable Got: ${chunk}`)
+//    cb(null);
+//  }
+//}));

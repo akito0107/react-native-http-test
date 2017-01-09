@@ -47,6 +47,10 @@ catbox@7.x.x:
     hoek "4.x.x"
     joi "10.x.x"
 
+complex.js@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/complex.js/-/complex.js-2.0.1.tgz#ea90c7a05aeceaf3a376d2c0f6a78421727d6879"
+
 content@3.x.x:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/content/-/content-3.0.3.tgz#000f8a01371b95c66afe99be9390fa6cb91aa87a"
@@ -58,6 +62,14 @@ cryptiles@3.x.x:
   resolved "https://registry.yarnpkg.com/cryptiles/-/cryptiles-3.1.1.tgz#86a9203f7367a0e9324bc7555ff0fcf5f81979ee"
   dependencies:
     boom "4.x.x"
+
+decimal.js@5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-5.0.8.tgz#b48c3fb7d73a2d4d4940e0b38f1cd21db5b367ce"
+
+fraction.js@3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-3.3.1.tgz#5d6a31ff07707294f204ccbb6b53791607771083"
 
 hapi@^16.0.1:
   version "16.0.1"
@@ -118,6 +130,16 @@ joi@10.x.x:
     isemail "2.x.x"
     items "2.x.x"
     topo "2.x.x"
+
+mathjs@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/mathjs/-/mathjs-3.8.0.tgz#232af4871e4e8249f5b46a98ede7deae92026634"
+  dependencies:
+    complex.js "2.0.1"
+    decimal.js "5.0.8"
+    fraction.js "3.3.1"
+    tiny-emitter "1.0.2"
+    typed-function "0.10.5"
 
 mime-db@1.x.x:
   version "1.25.0"
@@ -187,11 +209,19 @@ subtext@^4.3.x:
     pez "2.x.x"
     wreck "10.x.x"
 
+tiny-emitter@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-1.0.2.tgz#8e49470d3f55f89e247210368a6bb9fb51aa1601"
+
 topo@2.x.x:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/topo/-/topo-2.0.2.tgz#cd5615752539057c0dc0491a621c3bc6fbe1d182"
   dependencies:
     hoek "4.x.x"
+
+typed-function@0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/typed-function/-/typed-function-0.10.5.tgz#2e0f18abd065219fab694a446a65c6d1981832c0"
 
 ultron@1.0.x:
   version "1.0.2"

@@ -2278,11 +2278,7 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-inherits@2, inherits@^2.0.1, inherits@~2.0.1:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
-
-inherits@2.0.1:
+inherits@2, inherits@2.0.1, inherits@^2.0.1, inherits@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.1.tgz#b17d08d326b4423e568eff719f91b0b1cbdf69f1"
 
@@ -3769,9 +3765,17 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
+react-native-audio@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-audio/-/react-native-audio-2.2.0.tgz#e61a7592b04c1c62c5f3d24a4f7c4ad1d7bd434e"
+
 react-native-button@^1.7.1:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/react-native-button/-/react-native-button-1.7.1.tgz#0c3fb34e7f99dc2c9a8166094be878eb7cb3c36e"
+
+react-native-heading@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-heading/-/react-native-heading-1.0.0.tgz#6ab8cd5f11a685b38c8adf39d02e3ed6ca9afc58"
 
 react-native-motion-manager@^0.0.6:
   version "0.0.6"

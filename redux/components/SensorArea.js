@@ -11,9 +11,11 @@ import Button from 'react-native-button';
 const SensorArea = ({ sensorValue, onButtonPressed }) => {
   return (
     <View>
-      <Text>{sensorValue.x}</Text>
-      <Text>{sensorValue.y}</Text>
-      <Text>{sensorValue.z}</Text>
+      <Text>acceleration</Text>
+      <Text>{sensorValue.acceleration.x}</Text>
+      <Text>{sensorValue.acceleration.y}</Text>
+      <Text>{sensorValue.acceleration.z}</Text>
+      <Text></Text>
       <Button
         containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'white'}}
         style={{fontSize: 20, color: 'green'}}

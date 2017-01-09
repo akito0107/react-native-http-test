@@ -2,15 +2,20 @@
  * @flow
  */
 
-export default (state = {}, { type, payload}) => {
+export default (state = {}, { type, payload }) => {
+  
+  return state
+  
   switch (type) {
     case 'UPDATE_SENSOR':
       return {
         ...state,
         sensorValue: {
-          x: payload.acceleration.x,
-          y: payload.acceleration.y,
-          z: payload.acceleration.z,
+          acceleration: {
+            x: payload.acceleration.x,
+            y: payload.acceleration.y,
+            z: payload.acceleration.z,
+          },
         }
       }
     default:

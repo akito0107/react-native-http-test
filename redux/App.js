@@ -1,7 +1,6 @@
 /**
  * @flow
  */
-import TextArea from './containers/TextArea'
 import SensorArea from './containers/SensorArea'
 import NetworkArea from './containers/NetworkArea'
 import {
@@ -18,7 +17,6 @@ const App = () => (
     <Text style={styles.welcome}>
       Welcome to ExampleApp!
     </Text>
-    <TextArea />
     <SensorArea />
     <NetworkArea />
   </View>

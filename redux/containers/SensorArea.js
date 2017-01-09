@@ -18,7 +18,7 @@ const mapStateToProps = (state) => {
 }
 
 const wrappedSend = (message) => {
-  return send({message})
+  return send({ message })
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -26,6 +26,8 @@ const mapDispatchToProps = (dispatch) => {
     onButtonPressed: () => {
       dispatch(start())
       dispatch(listen({ listenerActions: [updateSensor, wrappedSend] }))
+      //dispatch(startHeading())
+      //dispatch(listenHeading({ listenerActions: [updateHeading, wrappedSend] }))
     }
   }
 }
