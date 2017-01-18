@@ -12,6 +12,7 @@
 		"react": "15.4.1",
 		"react-native": "0.39.0",
 		"react-native-audio": "^2.2.0",
+		"react-native-ble-manager": "2.4.3",
 		"react-native-button": "^1.7.1",
 		"react-native-heading": "^1.0.0",
 		"react-native-motion-manager": "^0.0.6",

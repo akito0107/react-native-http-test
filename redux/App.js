@@ -3,7 +3,6 @@
  */
 import NetworkArea from './containers/NetworkArea'
 import ControlArea from './containers/ControlArea'
-import BleArea from './containers/BleArea'
 import {
   AppRegistry,
   StyleSheet,
@@ -20,7 +19,6 @@ const App = () => (
     </Text>
     <ControlArea />
     <NetworkArea />
-    <BleArea />
   </View>
 )
 

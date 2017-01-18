@@ -13,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* HttpTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* HttpTestTests.m */; };
+		081286F61E2F8A6600A5E08C /* libBleManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 081286F51E2F8A4200A5E08C /* libBleManager.a */; };
 		0819B25C1DF5F16F00A5E08C /* libRNMotionManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0819B2591DF5F0FC00A5E08C /* libRNMotionManager.a */; };
 		08F9722B1DFD364C00A5E08C /* libReactNativeHeading.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0890D47A1DFD26F500A5E08C /* libReactNativeHeading.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
@@ -71,6 +72,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = HttpTest;
+		};
+		081286F41E2F8A4200A5E08C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 081286F01E2F8A4200A5E08C /* BleManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = BleManager;
 		};
 		0819B2381DF5C5E300A5E08C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -211,6 +219,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* HttpTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpTestTests.m; sourceTree = "<group>"; };
 		0801DB9D1E2E9CEA00A5E08C /* BleClientManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BleClientManager.framework; path = "../node_modules/react-native-ble-plx/ios/BleClientManager/Carthage/Build/iOS/BleClientManager.framework"; sourceTree = "<group>"; };
+		081286F01E2F8A4200A5E08C /* BleManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BleManager.xcodeproj; path = "../node_modules/react-native-ble-manager/ios/BleManager.xcodeproj"; sourceTree = "<group>"; };
 		0819B2531DF5F0FB00A5E08C /* RNMotionManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNMotionManager.xcodeproj; path = "../node_modules/react-native-motion-manager/RNMotionManager.xcodeproj"; sourceTree = "<group>"; };
 		0890D4751DFD26F400A5E08C /* ReactNativeHeading.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeHeading.xcodeproj; path = "../node_modules/react-native-heading/ReactNativeHeading.xcodeproj"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
@@ -243,6 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				081286F61E2F8A6600A5E08C /* libBleManager.a in Frameworks */,
 				08F9722B1DFD364C00A5E08C /* libReactNativeHeading.a in Frameworks */,
 				0819B25C1DF5F16F00A5E08C /* libRNMotionManager.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
@@ -328,6 +338,14 @@
 				0801DB9D1E2E9CEA00A5E08C /* BleClientManager.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		081286F11E2F8A4200A5E08C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				081286F51E2F8A4200A5E08C /* libBleManager.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		0819B2541DF5F0FB00A5E08C /* Products */ = {
@@ -417,6 +435,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				081286F01E2F8A4200A5E08C /* BleManager.xcodeproj */,
 				0890D4751DFD26F400A5E08C /* ReactNativeHeading.xcodeproj */,
 				0819B2531DF5F0FB00A5E08C /* RNMotionManager.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
@@ -538,6 +557,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 081286F11E2F8A4200A5E08C /* Products */;
+					ProjectRef = 081286F01E2F8A4200A5E08C /* BleManager.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
@@ -636,6 +659,13 @@
 			fileType = archive.ar;
 			path = libRCTVibration.a;
 			remoteRef = 00C302E31ABCB9EE00DB3ED1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		081286F51E2F8A4200A5E08C /* libBleManager.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBleManager.a;
+			remoteRef = 081286F41E2F8A4200A5E08C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		0819B2391DF5C5E300A5E08C /* libRCTImage-tvOS.a */ = {
