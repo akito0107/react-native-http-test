@@ -21,6 +21,7 @@ const stream = new Transform({
 wss.on('connection', (ws) => {
   console.log('on connection')
   ws.on('message', (mes) => {
+    console.log(`got message: ${mes}`);
     stream.write(mes);
   });
 });

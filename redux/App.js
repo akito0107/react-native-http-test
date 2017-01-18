@@ -1,8 +1,9 @@
 /**
  * @flow
  */
-import SensorArea from './containers/SensorArea'
 import NetworkArea from './containers/NetworkArea'
+import ControlArea from './containers/ControlArea'
+import BleArea from './containers/BleArea'
 import {
   AppRegistry,
   StyleSheet,
@@ -17,8 +18,9 @@ const App = () => (
     <Text style={styles.welcome}>
       Welcome to ExampleApp!
     </Text>
-    <SensorArea />
+    <ControlArea />
     <NetworkArea />
+    <BleArea />
   </View>
 )
 
