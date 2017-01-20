@@ -2,6 +2,7 @@
  * @flow
  */
 import NetworkArea from './containers/NetworkArea'
+import BleArea from './containers/BleArea'
 import ControlArea from './containers/ControlArea'
 import {
   AppRegistry,
@@ -19,6 +20,7 @@ const App = () => (
     </Text>
     <ControlArea />
     <NetworkArea />
+    <BleArea />
   </View>
 )
 
