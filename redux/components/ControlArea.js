@@ -14,9 +14,20 @@ const ControlArea = ({ onButtonPressed }) => {
      <Button
         containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'white'}}
         style={{fontSize: 20, color: 'green'}}
-        onPress={onButtonPressed}
+        onPress={() => {
+          onButtonPressed(1)
+        }}
       >
-       Blink!
+       Blink1!
+      </Button>
+      <Button
+        containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'white'}}
+        style={{fontSize: 20, color: 'green'}}
+        onPress={() => {
+          onButtonPressed(2)
+        }}
+      >
+       Blink2!
       </Button>
     </View>
   )

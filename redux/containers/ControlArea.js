@@ -14,8 +14,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onButtonPressed: () => {
-      dispatch(send({message: 'blink'}))
+    onButtonPressed: (id) => {
+      dispatch(
+        send({
+          message: {
+            id
+          }
+        }))
     }
   }
 }

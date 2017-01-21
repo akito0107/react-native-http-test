@@ -16,7 +16,16 @@ import React, {Component} from 'react'
 const App = () => (
   <View style={styles.container}>
     <Text style={styles.welcome}>
-      Welcome to ExampleApp!
+      Blink1 => 1号機点灯
+    </Text>
+    <Text style={styles.welcome}>
+      Blink2 => 2号機点灯
+    </Text>
+    <Text style={styles.welcome}>
+      connect => サーバに接続
+    </Text>
+    <Text style={styles.welcome}>
+      使い方: connect => Blink1 or Blink2
     </Text>
     <ControlArea />
     <NetworkArea />

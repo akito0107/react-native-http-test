@@ -37,7 +37,7 @@ const store = createStore(combineReducers({
   },
   applyMiddleware(promiseMiddleware,
     // sensorMiddleware({ interval: 0.1 }),
-    wsMiddleware({ host: '192.168.0.22', port: 3000, path: '/ws' }),
+    wsMiddleware({ host: '192.168.0.11', port: 3000, path: '/ws' }),
     // wsMiddleware({ host: '172.26.35.53', port: 3000, path: '/ws' })
     bleMiddleware(),
   ))
