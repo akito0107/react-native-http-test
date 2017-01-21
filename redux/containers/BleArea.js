@@ -5,11 +5,15 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import BleArea from '../components/BleArea'
-import {start, scan} from '../middlewares/BleMiddleware'
+import {start, scan, connect as connectNinja} from '../middlewares/BleMiddleware'
 
 const mapStateToProps = (state) => {
   return {
-    wsMessage: state.websocket.event
+    blueninja: state.ble.blueninja,
+    sensorValue: {
+      first: state.ble.updatedDevice.first,
+      second: state.ble.updatedDevice.second
+    }
   }
 }
 
@@ -20,6 +24,10 @@ const mapDispatchToProps = (dispatch) => {
     },
     onScanButtonPressed: () => {
       dispatch(scan({}))
+    },
+    onConnectButtonPressed: (opts) => {
+      console.log('onconnect', opts)
+      dispatch(connectNinja(opts))
     }
   }
 }

@@ -1,0 +1,8 @@
+- TODO
+    - Blueninjaに接続
+        - ~~service uuid, character uuid調べる~~
+        - notifyを登録
+        - Middleware化
+    - 本体のセンサを飛ばす
+        - react-native-headingを使う
+    - まとめてwsで送信

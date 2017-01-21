@@ -2,7 +2,7 @@ import {View, Text} from 'react-native'
 import React, {Component} from 'react'
 import Button from 'react-native-button'
 
-const BleArea = ({ onStartButtonPressed, onScanButtonPressed }) => {
+const BleArea = ({ blueninja, sensorValue, onStartButtonPressed, onScanButtonPressed, onConnectButtonPressed }) => {
   return (
     <View>
       <Button
@@ -19,8 +19,23 @@ const BleArea = ({ onStartButtonPressed, onScanButtonPressed }) => {
       >
         scan
       </Button>
-    </View>
-  )
-}
-
-export default BleArea
+      <Text>id {blueninja.id}</Text>
+      <Text>name {blueninja.name}</Text>
+      <Text>rssi {blueninja.rssi}</Text>
+      <Button
+        containerStyle={{ padding: 10, height: 45, overflow: 'hidden', borderRadius: 4, backgroundColor: 'white' }}
+        style={{ fontSize: 20, color: 'green' }}
+        onPress={() => {
+          onConnectButtonPressed({ peripheralId: blueninja.id })
+        }}
+          >
+          connect
+          </Button>
+      <Text>{sensorValue.first}</Text>
+      <Text>------------------</Text>
+      <Text>{sensorValue.second}</Text>
+          </View>
+          )
+        }
+        
+        export default BleArea

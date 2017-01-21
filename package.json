@@ -7,6 +7,8 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"buffer": "^5.0.2",
+		"buffer-to-uint8array": "^1.1.0",
 		"pino": "^3.0.5",
 		"promise-to-callback": "^1.0.0",
 		"react": "15.4.1",
@@ -20,7 +22,8 @@
 		"redux": "^3.6.0",
 		"redux-actions": "^1.1.0",
 		"redux-promise": "^0.5.3",
-		"util": "^0.10.3"
+		"util": "^0.10.3",
+		"xtend": "^4.0.1"
 	},
 	"devDependencies": {
 		"babel-jest": "17.0.2",

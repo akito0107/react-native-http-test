@@ -33,7 +33,7 @@ const store = createStore(combineReducers({
     text: { textValue: 'initial' },
     // sensor: { sensorValue: { acceleration: { x: 0, y: 0, z: 0 } } },
     websocket: { message: 'blank' },
-    ble: {}
+    ble: {blueninja: {}, updatedDevice: {}}
   },
   applyMiddleware(promiseMiddleware,
     // sensorMiddleware({ interval: 0.1 }),
